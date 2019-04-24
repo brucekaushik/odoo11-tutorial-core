@@ -125,6 +125,8 @@ def main(args):
     check_postgres_user()
     report_configuration()
 
+    print("contenthive: odoo has checked root user, postgres user, and reported configuration")
+
     config = odoo.tools.config
 
     # the default limit for CSV fields in the module is 128KiB, which is not
@@ -150,6 +152,8 @@ def main(args):
             except odoo.service.db.DatabaseExists:
                 pass
 
+    print("contenthive: odoo checked that database exists and created if required")
+
     if config["translate_out"]:
         export_translation()
         sys.exit(0)
@@ -166,10 +170,15 @@ def main(args):
     stop = config["stop_after_init"]
 
     setup_pid_file()
+
+    print("contenthive: odoo is just about to start the server...")
+    exit()
+
     rc = odoo.service.server.start(preload=preload, stop=stop)
     sys.exit(rc)
 
 class Server(Command):
     """Start the odoo server (default command)"""
     def run(self, args):
+        print("contenthive: executing odoo.cli.server.Server.run()")
         main(args)
