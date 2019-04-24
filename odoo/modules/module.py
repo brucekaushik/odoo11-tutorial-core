@@ -360,6 +360,12 @@ def load_openerp_module(module_name):
     when there is no model to register).
     """
     global loaded
+
+    print("contenthive: here a module is imported")
+    print("contenthive: when loading a module, first import hooks are used to check module in valid paths")
+    print("contenthive: next the module is imported by using a dynamically built name")
+    exit()
+
     if module_name in loaded:
         return
 
