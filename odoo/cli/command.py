@@ -55,6 +55,10 @@ def main():
         command = args[0]
         args = args[1:]
 
+    print('contenthive: commands available = ', commands)
+    print('contenthive: command to be executed = ', command)
+    exit()
+
     if command in commands:
         o = commands[command]()
         o.run(args)
