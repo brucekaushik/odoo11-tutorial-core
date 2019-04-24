@@ -121,6 +121,10 @@ def import_translation():
 
 def main(args):
     check_root_user()
+
+    print("contenthive: odoo is just about to parse the configuration...")
+    print("contenthive: we can observe that the below line: odoo.tools.config.parse_config(args) leads to us to code that marks 'web' as a server wide module to be loaded.")
+
     odoo.tools.config.parse_config(args)
     check_postgres_user()
     report_configuration()
