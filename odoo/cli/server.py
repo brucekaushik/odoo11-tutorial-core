@@ -172,7 +172,6 @@ def main(args):
     setup_pid_file()
 
     print("contenthive: odoo is just about to start the server...")
-    exit()
 
     rc = odoo.service.server.start(preload=preload, stop=stop)
     sys.exit(rc)
