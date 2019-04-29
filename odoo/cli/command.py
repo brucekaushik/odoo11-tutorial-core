@@ -57,7 +57,6 @@ def main():
 
     print('contenthive: commands available = ', commands)
     print('contenthive: command to be executed = ', command)
-    exit()
 
     if command in commands:
         o = commands[command]()
