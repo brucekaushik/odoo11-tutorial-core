@@ -863,7 +863,7 @@ server = None
 def load_server_wide_modules():
     print("contenthive: modules about to get loaded = ", odoo.conf.server_wide_modules)
     print("contenthive: we wonder why web is already loaded...")
-    exit()
+
     for m in odoo.conf.server_wide_modules:
         try:
             odoo.modules.module.load_openerp_module(m)
